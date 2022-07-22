@@ -122,7 +122,9 @@ export default function Home() {
           type: "function",
         },
       ];
+      
       const contract = new ethers.Contract(contractAddress, abi, signer);
+      
       try {
         await contract.store(42);
       } catch (error) {
@@ -132,6 +134,7 @@ export default function Home() {
       console.log("Please install MetaMask");
     }
   }
+  
   return (
     <div>
       {hasMetamask ? (
